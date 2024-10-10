@@ -57,9 +57,7 @@ const filePath = `${componentDir}/${kebabize(componentName)}.${fileExtension}`;
 const stylesPath = `${componentDir}/${kebabize(componentName)}.module.scss`;
 
 // Our index template is super straightforward, so we'll just inline it for now.
-const stylesTemplate = prettify(`\
-@import \'@/styles/variables\';
-`);
+const stylesTemplate = `@import '@/styles/variables';`;
 
 logIntro({
   name: componentName,
