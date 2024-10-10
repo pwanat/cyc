@@ -52,7 +52,7 @@ const fileExtension = 'tsx';
 const templatePath = `./templates/ts.js`;
 
 // Get all of our file paths worked out, for the user's project.
-const componentDir = `${options.dir}/${componentName}`;
+const componentDir = `${options.dir}/${kebabize(componentName)}`;
 const filePath = `${componentDir}/${kebabize(componentName)}.${fileExtension}`;
 const stylesPath = `${componentDir}/${kebabize(componentName)}.module.scss`;
 
@@ -111,7 +111,7 @@ mkDirPromise(componentDir)
   })
   .then((template) =>
     // We also need the `component_kebab_name.module.scss` file, which allows easy importing.
-    writeFilePromise(stylesPath, prettify(stylesTemplate))
+    writeFilePromise(stylesPath, stylesTemplate)
   )
   .then((template) => {
     logItemCompletion('Styles file built and saved to disk.');
