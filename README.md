@@ -4,6 +4,8 @@
 
 This project is a CLI tool that allows you to quickly scaffold new components. All of the necessary boilerplate will be generated automatically.
 
+A fork of https://github.com/joshwcomeau/new-component
+
 <br />
 
 ## Features

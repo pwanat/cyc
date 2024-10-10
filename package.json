@@ -1,6 +1,6 @@
 {
   "name": "cyc",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "CYC - CLI yield component. For creating a new React components in OF",
   "homepage": "https://github.com/pwanat/cyc",
   "repository": {
