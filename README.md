@@ -4,7 +4,7 @@
   <a href="https://www.npmjs.org/package/new-component"><img src="https://img.shields.io/npm/v/new-component.svg?style=flat" alt="npm"></a>
 </p>
 
-# new-component
+# CYC - CLI Yield Component
 
 ### Simple, customizable utility for adding new React components to your project.
 
@@ -35,16 +35,16 @@ Install via NPM:
 
 ```bash
 # Using Yarn:
-$ yarn global add new-component
+$ yarn global add git@github.com:pwanat/new-component
 
 # or, using NPM
-$ npm i -g new-component
+$ npm i -g git@github.com:pwanat/new-component
 ```
 
 `cd` into your project's directory, and try creating a new component:
 
 ```bash
-$ new-component MyNewComponent
+$ cyc MyNewComponent
 ```
 
 Your project will now have a new directory at `src/components/MyNewComponent`. This directory has two files:

@@ -1,7 +1,7 @@
 {
   "name": "new-component",
   "version": "1.0.1",
-  "description": "CLI for creating new React components for OF",
+  "description": "CYC - CLI yield component. For creating a new React components in OF",
   "homepage": "https://github.com/pwanat/new-component",
   "repository": {
     "type": "git",

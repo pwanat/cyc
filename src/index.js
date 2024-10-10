@@ -46,10 +46,10 @@ const [componentName] = program.args;
 
 const options = program.opts();
 
-const fileExtension = options.lang === 'js' ? 'jsx' : 'tsx';
+const fileExtension = 'tsx';
 
 // Find the path to the selected template file.
-const templatePath = `./templates/${options.lang}.js`;
+const templatePath = `./templates/ts.js`;
 
 // Get all of our file paths worked out, for the user's project.
 const componentDir = `${options.dir}/${componentName}`;
@@ -68,7 +68,7 @@ logIntro({
 // Check if componentName is provided
 if (!componentName) {
   logError(
-    `Sorry, you need to specify a name for your component like this: new-component <name>`
+    `Sorry, you need to specify a name for your component like this: cyc <name>`
   );
   process.exit(0);
 }

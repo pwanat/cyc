@@ -83,12 +83,11 @@ const colors = {
 };
 
 const langNames = {
-  js: 'JavaScript',
   ts: 'TypeScript',
 };
 
 const logComponentLang = (selected) =>
-  ['js', 'ts']
+  ['ts']
     .map((option) =>
       option === selected
         ? `${chalk.bold.rgb(...colors.blue)(langNames[option])}`
