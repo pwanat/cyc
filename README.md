@@ -1,20 +1,8 @@
-<p align="center">
-  <img src="https://github.com/joshwcomeau/new-component/blob/main/docs/logo@2x.png?raw=true" width="285" height="285" alt="new-component logo">
-  <br>
-  <a href="https://www.npmjs.org/package/new-component"><img src="https://img.shields.io/npm/v/new-component.svg?style=flat" alt="npm"></a>
-</p>
-
 # CYC - CLI Yield Component
 
 ### Simple, customizable utility for adding new React components to your project.
 
-<img src="https://github.com/joshwcomeau/new-component/blob/main/docs/divider@2x.png?raw=true" width="888" height="100" role="presentation">
-
 This project is a CLI tool that allows you to quickly scaffold new components. All of the necessary boilerplate will be generated automatically.
-
-This project uses an opinionated file structure discussed in this blog post: [**Delightful React File/Directory Structure**](https://www.joshwcomeau.com/react/file-structure/).
-
-> **NOTE: This project is not actively maintained.** I continue to use it in my own projects, but I don't have the bandwidth to review PRs or triage issues. Feel free to fork this project and tweak it however you wish. ❤️
 
 <br />
 
@@ -27,18 +15,16 @@ This project uses an opinionated file structure discussed in this blog post: [**
 
 <br />
 
-> **Version 5:** The new version adds support for TypeScript, and removes support for passing a custom file extension;
-
 ## Quickstart
 
 Install via NPM:
 
 ```bash
 # Using Yarn:
-$ yarn global add git@github.com:pwanat/new-component
+$ yarn global add git@github.com:pwanat/cyc
 
 # or, using NPM
-$ npm i -g git@github.com:pwanat/new-component
+$ npm i -g git@github.com:pwanat/cyc
 ```
 
 `cd` into your project's directory, and try creating a new component:
@@ -50,30 +36,25 @@ $ cyc MyNewComponent
 Your project will now have a new directory at `src/components/my-new-component`. This directory has two files:
 
 
-```jsx
-// `MyNewComponent/MyNewComponent.js`
-import React from 'react';
+```tsx
+// `my-new-component/my-new-component.tsx`
+import Styles from './my-new-component.module.scss';
 
-function MyNewComponent() {
-  return <div></div>;
+export const MyNewComponent = () => {
+  return (
+    <div>
+
+    </div>
+  );
 }
+```
 
-export default MyNewComponent;
+```module.scss 
+// `my-new-componentmy-new-component.module.scss`
+@import '@/styles/variables'
 ```
 
 These files will be formatted according to your Prettier configuration.
-
-<br />
-
-## Configuration
-
-Configuration can be done through 3 different ways:
-
-- Creating a global `.new-component-config.json` in your home directory (`~/.new-component-config.json`).
-- Creating a local `.new-component-config.json` in your project's root directory.
-- Command-line arguments.
-
-The resulting values are merged, with command-line values overwriting local values, and local values overwriting global ones.
 
 <br />
 
@@ -89,11 +70,6 @@ Command line: `--dir <value>` or `-d <value>`
 eg. `cyc -d src/containers/NewComponent
 
 JSON config: `{ "dir": <value> }`
-<br />
-
-## Platform Support
-
-This has only been tested in macOS. I think it'd work fine in linux, but I haven't tested it. Windows is a big question mark.
 <br />
 
 ## Known Issues
