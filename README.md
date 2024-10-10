@@ -47,12 +47,8 @@ $ npm i -g git@github.com:pwanat/new-component
 $ cyc MyNewComponent
 ```
 
-Your project will now have a new directory at `src/components/MyNewComponent`. This directory has two files:
+Your project will now have a new directory at `src/components/my-new-component`. This directory has two files:
 
-```jsx
-// `MyNewComponent/index.js`
-export { default } from './MyNewComponent';
-```
 
 ```jsx
 // `MyNewComponent/MyNewComponent.js`
@@ -83,22 +79,6 @@ The resulting values are merged, with command-line values overwriting local valu
 
 ## API Reference
 
-### Language
-
-Controls which language, JavaScript or TypeScript, should be used.
-
-- `js` — creates a `.js` file (default).
-- `ts` — creates a `.tsx` file.
-
-Note that all components created will be functional components. Class components are not supported.
-
-**Usage:**
-
-Command line: `--lang <value>` or `-l <value>`
-
-JSON config: `{ "lang": <value> }`
-<br />
-
 ### Directory
 
 Controls the desired directory for the created component. Defaults to `src/components`
@@ -106,6 +86,7 @@ Controls the desired directory for the created component. Defaults to `src/compo
 **Usage:**
 
 Command line: `--dir <value>` or `-d <value>`
+eg. `cyc -d src/containers/NewComponent
 
 JSON config: `{ "dir": <value> }`
 <br />

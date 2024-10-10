@@ -95,7 +95,7 @@ mkDirPromise(componentDir)
   })
   .then((template) =>
     // Replace our placeholders with real data (so far, just the component name)
-    template.replace(/COMPONENT_NAME/g, componentName)
+    template.replace(/COMPONENT_NAME/g, capitalize(componentName))
   )
   .then((template) =>
     // Replace our style placeholders with real data (so far, just the component name)
