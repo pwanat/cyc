@@ -1,14 +1,14 @@
 {
   "name": "new-component",
-  "version": "5.0.3",
-  "description": "CLI for creating new React components",
-  "homepage": "https://github.com/joshwcomeau/new-component",
+  "version": "1.0.0",
+  "description": "CLI for creating new React components for OF",
+  "homepage": "https://github.com/pwanat/new-component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joshwcomeau/new-component"
+    "url": "https://github.com/pwanat/new-component"
   },
   "bugs": {
-    "url": "https://github.com/joshwcomeau/new-component/issues"
+    "url": "https://github.com/pwanat/new-component/issues"
   },
   "main": "src/index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "component",
     "boilerplate"
   ],
-  "author": "Joshua Comeau",
+  "author": "Kapitan Bomba, fork of Joshua Comeau https://github.com/joshwcomeau/new-component",
   "license": "MIT",
   "bin": {
     "new-component": "./src/index.js"
