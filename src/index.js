@@ -104,7 +104,7 @@ mkDirPromise(componentDir)
   )
   .then((template) =>
     // Format it using prettier, to ensure style consistency, and write to file.
-    writeFilePromise(filePath, prettify(template))
+    writeFilePromise(filePath, template)
   )
   .then((template) => {
     logItemCompletion('Component built and saved to disk.');
