@@ -13,6 +13,7 @@ const {
   logConclusion,
   logError,
   kebabize,
+  capitalize,
 } = require('./helpers');
 const {
   requireOptional,

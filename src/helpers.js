@@ -140,3 +140,4 @@ module.exports.logError = (error) => {
 };
 
 module.exports.kebabize = (str) => str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase())
+module.exports.capitalize = (s) => s[0].toUpperCase() + s.slice(1);
