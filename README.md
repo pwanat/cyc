@@ -23,10 +23,10 @@ Install via NPM:
 
 ```bash
 # Using Yarn:
-$ yarn global add git@github.com:pwanat/cyc
+$ yarn global add cyc-of
 
 # or, using NPM
-$ npm i -g git@github.com:pwanat/cyc
+$ npm i -g cyc-of
 ```
 
 `cd` into your project's directory, and try creating a new component:
