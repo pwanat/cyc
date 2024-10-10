@@ -31,7 +31,7 @@ module.exports.getConfig = () => {
   const currentPath = process.cwd();
 
   const defaults = {
-    lang: 'js',
+    lang: 'ts',
     dir: 'src/components',
   };
 
@@ -139,3 +139,5 @@ module.exports.logError = (error) => {
   console.info(chalk.rgb(...colors.red)(error));
   console.info('\n');
 };
+
+module.exports.kebabize = (str) => str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase())

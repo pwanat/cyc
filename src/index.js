@@ -12,6 +12,7 @@ const {
   logItemCompletion,
   logConclusion,
   logError,
+  kebabize,
 } = require('./helpers');
 const {
   requireOptional,
@@ -35,12 +36,6 @@ program
   .version(version)
   .arguments('<componentName>')
   .option(
-    '-l, --lang <language>',
-    'Which language to use (default: "js")',
-    /^(js|ts)$/i,
-    config.lang
-  )
-  .option(
     '-d, --dir <pathToDirectory>',
     'Path to the "components" directory (default: "src/components")',
     config.dir
@@ -51,21 +46,19 @@ const [componentName] = program.args;
 
 const options = program.opts();
 
-const fileExtension = options.lang === 'js' ? 'js' : 'tsx';
-const indexExtension = options.lang === 'js' ? 'js' : 'ts';
+const fileExtension = options.lang === 'js' ? 'jsx' : 'tsx';
 
 // Find the path to the selected template file.
 const templatePath = `./templates/${options.lang}.js`;
 
 // Get all of our file paths worked out, for the user's project.
 const componentDir = `${options.dir}/${componentName}`;
-const filePath = `${componentDir}/${componentName}.${fileExtension}`;
-const indexPath = `${componentDir}/index.${indexExtension}`;
+const filePath = `${componentDir}/${kebabize(componentName)}.${fileExtension}`;
+const stylesPath = `${componentDir}/${kebabize(componentName)}.module.scss`;
 
 // Our index template is super straightforward, so we'll just inline it for now.
-const indexTemplate = prettify(`\
-export * from './${componentName}';
-export { default } from './${componentName}';
+const stylesTemplate = prettify(`\
+@import '@/styles/variables';
 `);
 
 logIntro({
@@ -107,6 +100,10 @@ mkDirPromise(componentDir)
     template.replace(/COMPONENT_NAME/g, componentName)
   )
   .then((template) =>
+    // Replace our style placeholders with real data (so far, just the component name)
+    template.replace(/COMPONENT_KEBAB_NAME/g, kebabize(componentName))
+  )
+  .then((template) =>
     // Format it using prettier, to ensure style consistency, and write to file.
     writeFilePromise(filePath, prettify(template))
   )
@@ -115,11 +112,11 @@ mkDirPromise(componentDir)
     return template;
   })
   .then((template) =>
-    // We also need the `index.js` file, which allows easy importing.
-    writeFilePromise(indexPath, prettify(indexTemplate))
+    // We also need the `component_kebab_name.module.scss` file, which allows easy importing.
+    writeFilePromise(stylesPath, prettify(stylesTemplate))
   )
   .then((template) => {
-    logItemCompletion('Index file built and saved to disk.');
+    logItemCompletion('Styles file built and saved to disk.');
     return template;
   })
   .then((template) => {

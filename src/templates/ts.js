@@ -1,7 +1,5 @@
-import * as React from 'react';
+import Styles from './COMPONENT_KEBAB_NAME.module.scss';
 
-function COMPONENT_NAME() {
+export const COMPONENT_NAME = () => {
   return <div></div>;
 }
-
-export default COMPONENT_NAME;
